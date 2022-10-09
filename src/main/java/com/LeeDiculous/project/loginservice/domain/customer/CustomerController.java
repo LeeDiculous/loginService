@@ -17,9 +17,13 @@ public class CustomerController {
     @Autowired
     private final CustomerService customerService;
 
+    @GetMapping("")
+    public String home() {
+        return "home";
+    }
+
     @GetMapping("/login")
     public String loginForm() {
-
         return "login/loginForm";
     }
 
