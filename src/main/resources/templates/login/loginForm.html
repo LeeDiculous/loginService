@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LeeDiculous • login</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/signin.css" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -66,16 +66,19 @@
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form th:action th:object="${customer}" method="post">
+
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating ">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-control" id="floatingInput" th:field="*{login.loginId}" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
         </div>
+
         <hr>
+
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" th:field="*{login.loginPassword}" placeholder="Password">
             <label for="floatingPassword">Password</label>
         </div>
 

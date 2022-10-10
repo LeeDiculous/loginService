@@ -23,13 +23,23 @@ public class CustomerController {
     }
 
     @GetMapping("/login")
-    public String loginForm() {
+    public String loginForm(@ModelAttribute Customer customer) {
         return "login/loginForm";
     }
 
     @PostMapping("/login")
     public String loginForm(@ModelAttribute Customer customer, Model model) {
-        model.addAttribute(customer);
+        log.info("고객의 이메일은 {} 비밀번호는 {}", customer.getLogin().getLoginId(), customer.getLogin().getLoginPassword());
         return "login/loginHome";
+    }
+
+    @GetMapping("/new")
+    public String newCustomer() {
+        return "login/newCustomer";
+    }
+
+    @PostMapping("/new")
+    public String newCustomer(@ModelAttribute Customer customer) {
+        return "redirect:/login";
     }
 }
