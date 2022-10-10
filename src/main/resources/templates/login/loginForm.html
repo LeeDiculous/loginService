@@ -66,19 +66,19 @@
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-    <form th:action th:object="${customer}" method="post">
+    <form th:action th:object="${login}" method="post">
 
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating ">
-            <input type="email" class="form-control" id="floatingInput" th:field="*{login.loginId}" placeholder="name@example.com">
+            <input type="email" class="form-control" id="floatingInput" th:field="*{loginId}" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
         </div>
 
         <hr>
 
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" th:field="*{login.loginPassword}" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" th:field="*{loginPassword}" placeholder="Password">
             <label for="floatingPassword">Password</label>
         </div>
 
